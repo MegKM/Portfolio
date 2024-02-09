@@ -51,7 +51,7 @@ function Skills(){
         
     ]
     return(
-        <div id="skills" className="container">
+        <div id="skills" className="container pt-4">
             <h2>Skills</h2>
             <div className="card-group">
                 {skills_first.map((skill, index) => <SkillCard skill={skill} key={index} />)}

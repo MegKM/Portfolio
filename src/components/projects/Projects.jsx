@@ -39,7 +39,7 @@ function ProjectsPage(){
 
     return (
         <>
-            <div id="projects" className="container">
+            <div id="projects" className="container pt-4">
                 <h2>Projects</h2>
                 <div className="card-group">
                     {projects.map((project, index) => <ProjectCard project={project} key={index} />)}

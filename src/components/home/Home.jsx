@@ -2,7 +2,7 @@ function Home(){
 
     return (
         <>
-            <div id="home" className="container mt-2">
+            <div id="home" className="container mt-2 pt-4">
                 <div className="container">
                     <div className="row">
                         <div className="col-8">
