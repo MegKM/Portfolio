@@ -16,7 +16,7 @@ function ProjectsPage(){
             image: "/NaturePhotos.png",
             description: "Built using JavaScript, Express, MongoDB, featuring MVC methodology and CRUD functionality.  This project is live on Heroku",
             link: "https://nature-photos-394e18c571b1.herokuapp.com/",
-            githublink: "https://github.com/MegKM/grand-central"
+            githublink: "https://github.com/MegKM/nature-photos"
 
         },
         {
@@ -32,7 +32,8 @@ function ProjectsPage(){
             image: "/GrandCentral.png",
             description: "Built using Python and Django, featuring CRUD functionality for admin staff. This project is live on Heroku",
             link: "https://grandcentral-e0ebd1401088.herokuapp.com/",
-            githublink: "https://github.com/MegKM/nature-photos"
+            
+            githublink: "https://github.com/MegKM/grand-central"
 
         },
     ]
