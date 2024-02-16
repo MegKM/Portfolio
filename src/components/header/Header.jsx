@@ -18,6 +18,9 @@ function Header(){
                             <a className="nav-link" href="/skills">Skills</a>
                         </li>
                         <li className="nav-item">
+                            <a className="nav-link" href="/games">Games</a>
+                        </li>
+                        <li className="nav-item">
                             <a className="nav-link" href="/contact">Contact</a>
                         </li>
                     </ul>
