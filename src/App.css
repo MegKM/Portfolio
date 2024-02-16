@@ -5,3 +5,15 @@
     background-size: cover;
 }
 
+.hangman-picture {
+    background-color: white;
+    width: 30vmin;
+    display: flex;
+    justify-content: center;
+}
+
+.game-links {
+    color: black;
+    text-decoration: none;
+}
+

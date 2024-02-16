@@ -6,12 +6,15 @@ function GameCard({game}){
 
     return(
         <>
-            <div className="card p-5 m-2">
+            <div className="card p-5 m-2"  style={{ 
+                backgroundImage: `url(${game.background})`, 
+                backgroundRepeat: 'norepeat',
+                backgroundSize: 'cover'}}>
                 { gameExists ? (
                 <div className="card-body">
-                    <h5 className="card-title">{game.name}</h5>
+                    <h3 className="card-title">{game.name}</h3>
                 <Link to={`/games/${game.name}`}>
-                    <p>{game.description}</p>
+                    <p className='game-links'>{game.description}</p>
                     </Link> 
                 </div>
                 ) : (

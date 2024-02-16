@@ -6,8 +6,9 @@ function GamesPage(){
     const games = [
         {
             name: "Hangman",
-            active: false,
-            description: "Coming soon"
+            active: true,
+            description: "Click here to play the game.",
+            background: "/src/assets/desert.png"
         },
         {
             name: "Codebreaker",

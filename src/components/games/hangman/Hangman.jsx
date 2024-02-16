@@ -64,18 +64,19 @@ function Hangman(){
             <div className="container mt-4">
                 <h1>Hangman</h1>
                 { wrongGuessesLetters.length < 7 ? (
-                <img src={hangman_pictures[wrongGuessesLetters.length]}></img>
+                <div className='hangman-picture'><img src={hangman_pictures[wrongGuessesLetters.length]}></img></div>
                 ) : (
-                <img src={hangman_pictures[7]}></img> )
+                    <div className='hangman-picture'><img src={hangman_pictures[7]}></img> </div>)
                 }
-                <p>{ onScreenWord }</p>
-                <p>{ userMessage }</p>
+                <h3>{ onScreenWord }</h3>
+                <h4>{ userMessage }</h4>
                 { gameInPlay ? (
                     <div>
                         <p>Incorrect guesses: { wrongGuessesLetters }</p>
-                        <p>Guesses remaining: { 7 - wrongGuessesLetters.length}</p>
+                        <p>Guesses remaining: { 7 - wrongGuessesLetters.length }</p>
                     </div> ) : ( 
                     <div>
+                        <p>The word was: {wordToGuess}</p>
                         <button className='btn btn-dark' onClick={ refreshPage }>Play again?</button>
                     </div>) 
                 }
