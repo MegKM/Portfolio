@@ -1,7 +1,7 @@
 export const random_words = [
     'apple', 'banana', 'orange', 'grape', 'pear', 'watermelon', 'strawberry', 'pineapple',
     'blueberry', 'raspberry', 'kiwi', 'mango', 'papaya', 'apricot', 'peach', 'plum', 'cherry',
-    'dog', 'cat', 'rabbit', 'hamster', 'guinea pig', 'goldfish', 'bird', 'turtle', 'snake', 'lizard',
+    'dog', 'cat', 'rabbit', 'hamster', 'computer', 'goldfish', 'bird', 'turtle', 'snake', 'lizard',
     'elephant', 'giraffe', 'lion', 'tiger', 'bear', 'monkey', 'kangaroo', 'koala', 'panda', 'zebra',
     'carrot', 'broccoli', 'corn', 'cucumber', 'lettuce', 'potato', 'tomato', 'onion', 'garlic', 'pepper',
     'pizza', 'burger', 'pasta', 'rice', 'sandwich', 'salad', 'soup', 'steak', 'chicken', 'fish',

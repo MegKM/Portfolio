@@ -3,28 +3,35 @@ import { random_words } from '../../../hangmanWords.js'
 
 function Hangman(){
     const randomWord = Array.from(random_words[Math.floor(Math.random() * random_words.length)]);
-    const wordLength = randomWord.length
-    let keyPressed = ""
+    const wordLength = randomWord.length;
     
-    const initialWord = []
-
+    const dashedWord = []
     randomWord.forEach(letter => {
-        initialWord.push("_ ")
+        dashedWord.push("_ ")
     })
 
     const [wordToGuess, setWordToGuess] = useState(randomWord)
-    const [onScreenWord, setOnScreenWord] = useState(initialWord)
+    const [onScreenWord, setOnScreenWord] = useState(dashedWord)
+    const [wrongGuessesLetters, setWrongGuessesLetters] = useState([])
 
     useEffect(() => {
         document.addEventListener('keydown', detecKeyPressed, true)
     }, [])
 
     const detecKeyPressed = (event) => {
-        keyPressed = event.key;
-        if (wordToGuess.includes(keyPressed)){
-            console.log("True")
-            console.log(wordToGuess.indexOf(keyPressed))
+        const keyPressed = event.key;
+        if (wordToGuess.includes(keyPressed) && !onScreenWord.includes(keyPressed)){
+            dashedWord[wordToGuess.indexOf(keyPressed)] = keyPressed
+            console.log(dashedWord)
+            const updatedWord = wordToGuess.map((letter) => {
+                return letter === keyPressed ? keyPressed : onScreenWord[wordToGuess.indexOf(letter)];
+            })     
+            setOnScreenWord(updatedWord)       
+        } else {
+            setWrongGuessesLetters(wrongGuessesLetters.push(keyPressed))
+            console.log(wrongGuessesLetters)
         }
+
     }
 
     return(
@@ -38,4 +45,5 @@ function Hangman(){
     )
 }
 
-export default Hangman
+export default Hangman;
+
