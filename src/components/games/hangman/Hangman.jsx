@@ -4,7 +4,7 @@ import { random_words } from '../../../hangmanWords.js'
 function Hangman(){
     const randomWord = Array.from(random_words[Math.floor(Math.random() * random_words.length)]);
     const wordLength = randomWord.length;
-    
+        
     const dashedWord = []
     randomWord.forEach(letter => {
         dashedWord.push("_ ")
@@ -13,25 +13,44 @@ function Hangman(){
     const [wordToGuess, setWordToGuess] = useState(randomWord)
     const [onScreenWord, setOnScreenWord] = useState(dashedWord)
     const [wrongGuessesLetters, setWrongGuessesLetters] = useState([])
+    const [userMessage, setUserMessage] = useState("Choose a letter")
+    const [gameInPlay, setGameInPlay] = useState(true)
 
     useEffect(() => {
-        document.addEventListener('keydown', detecKeyPressed, true)
+        document.addEventListener('keydown', detectKeyPressed, true)
     }, [])
 
-    const detecKeyPressed = (event) => {
+    const detectKeyPressed = (event) => {
         const keyPressed = event.key;
         if (wordToGuess.includes(keyPressed) && !onScreenWord.includes(keyPressed)){
             dashedWord[wordToGuess.indexOf(keyPressed)] = keyPressed
-            console.log(dashedWord)
             const updatedWord = wordToGuess.map((letter) => {
                 return letter === keyPressed ? keyPressed : onScreenWord[wordToGuess.indexOf(letter)];
             })     
-            setOnScreenWord(updatedWord)       
+            setOnScreenWord(updatedWord)
+            if(wordToGuess.toString() === updatedWord.toString()){
+                setUserMessage("You've won!")
+                setGameInPlay(false);
+                console.log(gameInPlay)
+            } else {
+                setUserMessage("Correct! Guess another letter.")       
+            }
         } else {
-            setWrongGuessesLetters(wrongGuessesLetters.push(keyPressed))
-            console.log(wrongGuessesLetters)
+            if(wrongGuessesLetters.includes(keyPressed)){
+                setUserMessage("You've already guess this letter, try again.")
+            } else {
+                wrongGuessesLetters.push(keyPressed)
+                let newArray = wrongGuessesLetters.map((letter) => {
+                    return letter 
+                })
+                setWrongGuessesLetters(newArray)
+                setUserMessage("Incorrect, try again.")
+            }
         }
+    }
 
+    function refreshPage(){
+        location.reload()
     }
 
     return(
@@ -40,6 +59,16 @@ function Hangman(){
                 <h1>Hangman coming soon</h1>
                 <p>{ wordToGuess }</p>
                 <p>{ onScreenWord }</p>
+                <p>{ userMessage }</p>
+                { gameInPlay ? (
+                    <div>
+                        <p>Incorrect guesses: { wrongGuessesLetters }</p>
+                        <p>Number of incorrect guesses: {wrongGuessesLetters.length}</p>
+                    </div> ) : ( 
+                    <div>
+                        <button className='btn btn-dark' onClick={ refreshPage }>Play again?</button>
+                    </div>) 
+                }
             </div>
         </>
     )
