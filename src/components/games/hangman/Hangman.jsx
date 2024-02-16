@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { random_words } from '../../../hangmanWords.js'
+import { hangman_pictures } from '../../../hangmanPictures.js'
 
 function Hangman(){
     const randomWord = Array.from(random_words[Math.floor(Math.random() * random_words.length)]);
@@ -45,6 +46,11 @@ function Hangman(){
                 })
                 setWrongGuessesLetters(newArray)
                 setUserMessage("Incorrect, try again.")
+                console.log("wrong guesses: ", wrongGuessesLetters.length)
+                if(wrongGuessesLetters.length >= 7){
+                    setUserMessage("Game over!")
+                    setGameInPlay(false)
+                }
             }
         }
     }
@@ -56,14 +62,18 @@ function Hangman(){
     return(
         <>
             <div className="container mt-4">
-                <h1>Hangman coming soon</h1>
-                <p>{ wordToGuess }</p>
+                <h1>Hangman</h1>
+                { wrongGuessesLetters.length < 7 ? (
+                <img src={hangman_pictures[wrongGuessesLetters.length]}></img>
+                ) : (
+                <img src={hangman_pictures[7]}></img> )
+                }
                 <p>{ onScreenWord }</p>
                 <p>{ userMessage }</p>
                 { gameInPlay ? (
                     <div>
                         <p>Incorrect guesses: { wrongGuessesLetters }</p>
-                        <p>Number of incorrect guesses: {wrongGuessesLetters.length}</p>
+                        <p>Guesses remaining: { 7 - wrongGuessesLetters.length}</p>
                     </div> ) : ( 
                     <div>
                         <button className='btn btn-dark' onClick={ refreshPage }>Play again?</button>
