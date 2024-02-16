@@ -1,9 +1,9 @@
 export const hangman_pictures = [ 
-  "/src/assets/hangman1.png", 
-  "/src/assets/hangman2.png",
-  "/src/assets/hangman3.png",
-  "/src/assets/hangman4.png",
-  "/src/assets/hangman5.png",
-  "/src/assets/hangman6.png",
-  "/src/assets/hangman7.png",
-  "/src/assets/hangman8.png"]
+  "/public/hangman1.png", 
+  "/public/hangman2.png",
+  "/public/hangman3.png",
+  "/public/hangman4.png",
+  "/public/hangman5.png",
+  "/public/hangman6.png",
+  "/public/hangman7.png",
+  "/public/hangman8.png"]
