@@ -6,10 +6,11 @@ function GameCard({game}){
 
     return(
         <>
-            <div className="card p-5 m-2"  style={{ 
-                backgroundImage: `url(${game.background})`, 
+            <div className="card game-card p-5 m-2"  style={{ 
+                backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(${game.background})`, 
                 backgroundRepeat: 'norepeat',
-                backgroundSize: 'cover'}}>
+                backgroundSize: 'cover',
+                backgroundColor: ``}}>
                 { gameExists ? (
                 <div className="card-body">
                     <h3 className="card-title">{game.name}</h3>

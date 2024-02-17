@@ -17,3 +17,6 @@
     text-decoration: none;
 }
 
+.game-card {
+    max-width: 40vmin;
+}
