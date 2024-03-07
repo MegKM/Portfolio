@@ -16,8 +16,8 @@ function Skills(){
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg"
         },
         {
-            name: "Django",
-            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg"
+            name: "C#",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
         },
         {
             name: "JavaScript",
@@ -45,8 +45,33 @@ function Skills(){
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"
         },
         {
-            name: "GitHub",
+            name: " Django",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg"
+        },
+    ]
+
+    const skills_third= [ 
+    
+        {
+            name: "AWS",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+    
+        },
+        {
+            name: " GitHub",
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"
+        },
+        {
+            name: "Unity Game Engine",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original-wordmark.svg"          
+        },
+        {
+            name: "Bootstrap",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg"
+        },
+        {
+            name: "Heroku",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/heroku/heroku-original-wordmark.svg"
         },
         
     ]
@@ -59,6 +84,9 @@ function Skills(){
             </div>
             <div className="card-group">
                 {skills_second.map((skill, index) => <SkillCard skill={skill} key={index} />)}
+            </div>
+            <div className="card-group">
+                {skills_third.map((skill, index) => <SkillCard skill={skill} key={index} />)}
             </div>
         </div>
     )

@@ -1,8 +1,9 @@
 #root {
-    height: 100vh;
-    background-image: url('/public/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    min-height: 100vh;
+    background-size:cover;
+    height: 100%;
+    background: rgb(175,237,250);
+    background: linear-gradient(90deg, rgba(175,237,250,1) 0%, rgba(209,209,238,1) 50%, rgba(175,237,250,1) 100%);
 }
 
 .hangman-picture {
@@ -19,4 +20,10 @@
 
 .game-card {
     max-width: 40vmin;
+}
+
+@media (max-width: 800px) {
+    .card-body {
+        max-width: 100vmin;
+    }
 }

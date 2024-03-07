@@ -8,7 +8,7 @@ function GamesPage(){
             name: "Hangman",
             active: true,
             description: "Click here to play the game.",
-            background: "desert.png"
+            background: "hangman_image.png"
         },
         {
             name: "Codebreaker",

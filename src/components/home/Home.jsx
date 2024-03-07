@@ -14,8 +14,8 @@ function Home(){
                             <p> I'm a junior software developer with a passion for back-end programming.  
                             The majority of my studies have been self-directed, I have studied programming passionately in my free time completing various online courses through a number of platforms. This includes:
                             <ul>
-                                <li>CS50 - a computer science course through HarvardX</li>
-                                <li> C# Fundamentals - Microsoft Learn</li>
+                                <li>CS50 - a computer science course through HarvardX,</li>
+                                <li> C# Fundamentals - Microsoft Learn,</li>
                                 <li>100 days of Code - a Python course through Udemy,</li> 
                                 <li>and a number of Unity game design courses; the scene in the video below was built using C# and the Unity Game Engine.</li>
                                  </ul>
