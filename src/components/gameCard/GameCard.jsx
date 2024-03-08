@@ -7,7 +7,7 @@ function GameCard({game}){
     return(
         <>
             <div className="card game-card p-5 m-2"  style={{ 
-                backgroundColor: '#CFC4EB'}}>
+                backgroundColor: '#d1d1ee'}}>
                 { gameExists ? (
                 <div className="card-body">
                     <h3 className="card-title">{game.name}</h3>

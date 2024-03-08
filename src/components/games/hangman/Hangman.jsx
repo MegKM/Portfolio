@@ -4,7 +4,6 @@ import { hangman_pictures } from '../../../hangmanPictures.js'
 
 function Hangman(){
     const randomWord = Array.from(random_words[Math.floor(Math.random() * random_words.length)]);
-    const wordLength = randomWord.length;
         
     const dashedWord = []
     randomWord.forEach(letter => {
@@ -42,11 +41,11 @@ function Hangman(){
             } else {
                 wrongGuessesLetters.push(keyPressed)
                 let newArray = wrongGuessesLetters.map((letter) => {
-                    return letter 
+                    let uppercaseLetter = letter.toUpperCase()
+                    return uppercaseLetter 
                 })
                 setWrongGuessesLetters(newArray)
                 setUserMessage("Incorrect, try again.")
-                console.log("wrong guesses: ", wrongGuessesLetters.length)
                 if(wrongGuessesLetters.length >= 7){
                     setUserMessage("Game over!")
                     setGameInPlay(false)

@@ -8,10 +8,9 @@ function GamesPage(){
             name: "Hangman",
             active: true,
             description: "Click here to play the game.",
-            background: "hangman_image.png"
         },
         {
-            name: "Codebreaker",
+            name: "Quiz",
             active: false,
             description: "Coming soon"
         }
