@@ -31,7 +31,6 @@ function Hangman(){
             if(wordToGuess.toString() === updatedWord.toString()){
                 setUserMessage("You've won!")
                 setGameInPlay(false);
-                console.log(gameInPlay)
             } else {
                 setUserMessage("Correct! Guess another letter.")       
             }

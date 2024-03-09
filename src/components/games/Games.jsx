@@ -11,8 +11,8 @@ function GamesPage(){
         },
         {
             name: "Quiz",
-            active: false,
-            description: "Coming soon"
+            active: true,
+            description: "Click here to take a 10-question quiz"
         }
     ]
     return (

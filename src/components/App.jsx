@@ -7,6 +7,7 @@ import Games from './games/Games'
 import Hangman from './games/hangman/Hangman'
 import Quiz from './games/quiz/Quiz'
 import Question from './games/quiz/Question'
+import Results from './games/quiz/Results'
 import {Routes, Route} from 'react-router-dom'
 import '../App.css'
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/games/hangman' element={ <Hangman />} />
         <Route path='/games/quiz' element={ <Quiz />} />
         <Route path='/games/quiz/question' element={ <Question />} />
+        <Route path='/games/quiz/results' element={ <Results />} />
         <Route path='/contact' element={ <Contact /> } />
       </Routes>
     </>

@@ -1,14 +1,20 @@
-import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+let results = 0
 
 function Question(){
     const { state } = useLocation();
-    let score = 0;
+    const navigate = useNavigate();
 
     const [ questionNumber, setQuestionNumber ] = useState(0)
     const [ question, setQuestion ] = useState(state.results[questionNumber])
     const answers = [question.correct_answer, question.incorrect_answers[0], question.incorrect_answers[1],question.incorrect_answers[2]]
     const shuffledAnswers = shuffle(answers)
+
+    useEffect(() => {
+        setQuestion(state.results[questionNumber]);
+    }, [questionNumber, state.results]);
 
     function shuffle(array){
         let currentIndex = array.length, randomIndex;
@@ -24,27 +30,33 @@ function Question(){
     }
 
     function checkAnswer(event){
-        console.log("correct answer: " + question.correct_answer)
-        console.log("answer selected: " + event.target.value)
+        question.players_choice = event.target.value;
 
         if(question.correct_answer === event.target.value){
-            score += 1;
-            setQuestionNumber(questionNumber + 1)
-            setQuestion(state.results[questionNumber])
-            console.log(questionNumber)
-            console.log("true")
+            results += 1
         }
-        else {
-            setQuestionNumber(questionNumber + 1)
-            setQuestion(state.results[questionNumber])
-            console.log("false")
+
+        if(questionNumber == 9){
+            navigate("/games/quiz/results", {state: {questions: state.results, results: results}});
         }
+        else{
+            setQuestionNumber(prevQuestionNumber => prevQuestionNumber +1);
+        }
+
     }
 
-    const replaceQuotes = question.question.replace(/&quot;/g, '"')
-    const finalQuestion = replaceQuotes.replace(/&#039;/g, "'")
-
-    console.log(state);
+    const finalQuestion = question.question.replace(/&quot;|&rsquo;|&#039;|&#039;|&ldquo;|&rdquo;/g, match => {
+        switch (match) {
+            case "&quot;":
+            case "&ldquo;":
+            case "&rdquo;":
+                return '"';
+            case "&rsquo;":
+            case "&#039;":
+                return "'";
+        }
+    });
+    
     return(
         <div className="container mt-2 pt-4">
             <h1>Question {questionNumber + 1}</h1>
@@ -53,30 +65,6 @@ function Question(){
             <button className="btn btn-dark m-2" onClick={checkAnswer} value={shuffledAnswers[1]}>{shuffledAnswers[1]}</button>
             <button className="btn btn-dark m-2" onClick={checkAnswer} value={shuffledAnswers[2]}>{shuffledAnswers[2]}</button>
             <button className="btn btn-dark m-2" onClick={checkAnswer} value={shuffledAnswers[3]}>{shuffledAnswers[3]}</button>
-            {/* <div id="accordion">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Collapsible Group Item #1
-                            </button>
-                        </h5>
-                    </div>
-                </div>
-            </div> */}
-
-            <p>
-            <a class="btn btn-dark" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Answers</a>
-            </p>
-            <div class="row">
-                <div class="col">
-                    <div class="collapse multi-collapse" id="multiCollapseExample1">
-                    <div class="card card-body">
-                        Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                    </div>
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }

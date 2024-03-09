@@ -10,6 +10,9 @@ function Quiz(){
     async function sendApiRequest(){
         let response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
         let data = await response.json();
+        data.results.forEach(element => {
+            element["players_choice"] =""
+            })
         redirect(data);
     }
 
