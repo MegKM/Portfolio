@@ -4,8 +4,15 @@ import ResultsCard from './ResultsCard';
 function Results(){
     const { state } = useLocation();
     const navigate = useNavigate();
+    let total_score = 0
 
-    const { questions, results } = state;
+    const { questions } = state;
+
+    questions.forEach(element => {
+        if(element.correct_answer === element.players_choice){
+            total_score += 1
+        }
+    });
 
     function restartQuiz(){
         navigate("/games/quiz")
@@ -14,7 +21,7 @@ function Results(){
     return (
         <div className="container pt-4">
             <h1>Results</h1>
-            <h2>{results}/10</h2>
+            <h2>{total_score}/10</h2>
             <div>
                 {questions.map((question, index) => <ResultsCard question={question} key={index} />)}
             </div>

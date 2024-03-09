@@ -32,10 +32,6 @@ function Question(){
     function checkAnswer(event){
         question.players_choice = event.target.value;
 
-        if(question.correct_answer === event.target.value){
-            results += 1
-        }
-
         if(questionNumber == 9){
             navigate("/games/quiz/results", {state: {questions: state.results, results: results}});
         }
