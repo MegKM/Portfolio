@@ -13,7 +13,7 @@ function ProjectsPage(){
 
         },
         {
-            name: "Nature",
+            name: "NaturePhotos",
             image: "/NaturePhotos.png",
             description: "A prototype website for viewing photos of the natural world. As a standard user, images can be filtered by tags. After logging in with Google OAuth you will be able to favourite images and create your own custom tags. Built using JavaScript, Express & MongoDB, utilizing MVC methodology, featuring full CRUD functionality, the images are stored on Cloudinary.  This project is live on Heroku.",
             link: "https://nature-photos-394e18c571b1.herokuapp.com/",
