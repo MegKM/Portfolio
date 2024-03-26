@@ -7,12 +7,14 @@ function GamesPage(){
         {
             name: "Hangman",
             active: true,
-            description: "Click here to play the game.",
+            description: "The traditional hangman game.  Use your keyboard to select letters and try to guess the correct word before it's too late!",
+            link: "Click here to play the game.",
         },
         {
             name: "Quiz",
             active: true,
-            description: "Click here to take a 10-question quiz"
+            description: "Utilizing Open Trivia DB's API, select a category and difficulty then try your best to get 10/10.",
+            link: "Click here to take a 10-question quiz"
         }
     ]
     return (

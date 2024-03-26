@@ -11,8 +11,9 @@ function GameCard({game}){
                 { gameExists ? (
                 <div className="card-body">
                     <h3 className="card-title">{game.name}</h3>
+                    <p>{game.description}</p>
                 <Link to={`/games/${game.name}`}>
-                    <p className='game-links'>{game.description}</p>
+                    <p className='game-links'>{game.link}</p>
                     </Link> 
                 </div>
                 ) : (
