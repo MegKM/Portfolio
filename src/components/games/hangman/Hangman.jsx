@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { random_words } from '../../../hangmanWords.js'
 import { hangman_pictures } from '../../../hangmanPictures.js'
+import { Link } from 'react-router-dom';
 
 function Hangman(){
     const randomWord = Array.from(random_words[Math.floor(Math.random() * random_words.length)]);
@@ -75,7 +76,8 @@ function Hangman(){
                     </div> ) : ( 
                     <div>
                         <p>The word was: {wordToGuess}</p>
-                        <button className='btn btn-dark' onClick={ refreshPage }>Play again?</button>
+                        <button className='btn btn-dark m-4' onClick={ refreshPage }>Play again</button>
+                        <Link to={`/games`}><button className='btn btn-dark'>Return to games</button></Link>
                     </div>) 
                 }
             </div>

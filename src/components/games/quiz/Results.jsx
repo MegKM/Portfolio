@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import ResultsCard from './ResultsCard';
 
 function Results(){
@@ -25,7 +25,9 @@ function Results(){
             <div>
                 {questions.map((question, index) => <ResultsCard question={question} key={index} />)}
             </div>
-            <button className='btn btn-dark' onClick={restartQuiz}>Play again?</button>
+            <hr></hr>
+            <button className='btn btn-dark m-2' onClick={restartQuiz}>Play again</button>
+            <Link to={`/games`}><button className='btn btn-dark'>Return to games</button></Link>
         </div>
     )
 }
