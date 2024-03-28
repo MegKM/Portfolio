@@ -4,7 +4,7 @@
 }
 
 .project-card {
-    height: 65vmin;
+    min-height: 65vmin;
 }
 
 .card-img-top {
