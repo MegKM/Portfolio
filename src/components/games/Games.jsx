@@ -52,7 +52,7 @@ function GamesPage(){
     return (
         <>
         <div id="games" className="container pt-4">
-            <h2>Games and such</h2>
+            <h2>Games & such</h2>
             <hr></hr>
             <h4>Welcome</h4>
             <p>This section of the site is me playing around with code and API calls. That's all.</p>
@@ -64,7 +64,12 @@ function GamesPage(){
             </div>
             <hr></hr>
             <div className="joke_quote">
-                <div>
+                <div className="quote">
+                    <h5>Quote of the day</h5>
+                    <p>{ quote }</p>
+                    <p>-{ quoteSayer }</p>
+                </div>
+                <div className="joke">
                     <h5>Joke town</h5>
                     <div id="joke">{ joke }</div>
                     <button className="btn btn-dark mb-2 mt-2"onClick={ revealPunchline }>
@@ -76,11 +81,7 @@ function GamesPage(){
                             <button className="btn btn-dark" onClick={ getJoke }>Get new joke</button>
                         </div>}
                 </div>
-                <div>
-                    <h5>Quote of the day</h5>
-                    <p>{ quote }</p>
-                    <p>-{ quoteSayer }</p>
-                </div>
+
             </div>
         </div>
         </>

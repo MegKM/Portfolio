@@ -31,5 +31,8 @@
 .joke_quote {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+}
+
+.quote, .joke {
+    width: 50%;
 }
