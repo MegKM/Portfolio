@@ -15,24 +15,24 @@ function ProjectsPage(){
         {
             name: "NaturePhotos",
             image: "/NaturePhotos.png",
-            description: "A prototype website for viewing photos of the natural world. As a standard user, images can be filtered by tags. After logging in with Google OAuth you will be able to favourite images and create your own custom tags. Built using JavaScript, Express & MongoDB, utilizing MVC methodology, featuring full CRUD functionality, the images are stored on Cloudinary.  This project is live on Heroku.",
-            link: "https://nature-photos-394e18c571b1.herokuapp.com/",
+            description: "A prototype website for viewing photos of the natural world. As a standard user, images can be filtered by tags. After logging in with Google OAuth you will be able to favourite images and create your own custom tags. Built using JavaScript, Express & MongoDB, utilizing MVC methodology, featuring full CRUD functionality, the images are stored on Cloudinary. The code is viewable on GitHub.",
+            // link: "https://nature-photos-394e18c571b1.herokuapp.com/",
             githublink: "https://github.com/MegKM/nature-photos"
 
         },
         {
             name: "CommuniTalk",
             image: "/Communitalk.png",
-            description: "This is a group project built using JavaScript and the MERN stack and features full CRUD functionality.  On this site you can search and add friends, once they have accepted the request you can instant message each other through the use of websockets.  You can view other people's communities and create your own. To test the site use guest login guest@email.com with password 123User456. Create a community, update your profile, have fun :)",
-            link: "https://charla-d8fb0f8c0b93.herokuapp.com/",
+            description: "This is a group project built using JavaScript and the MERN stack and features full CRUD functionality.  On this site you can search and add friends, once they have accepted the request you can instant message each other through the use of websockets.  You can view other people's communities and create your own. The code is viewable on GitHub.",
+            // link: "https://charla-d8fb0f8c0b93.herokuapp.com/",
             githublink: "https://github.com/PyConqueror/MERN-Stack-chat-web-app"
 
         },
         {
             name: "Grand Central Hotel website",
             image: "/GrandCentral.png",
-            description: "This pub website allows users to view upcoming events and the food and drink menus. Once logged in, customers can create an order, selecting from various side options as they go.  The site is designed for easy-customisation by the client.  There's a Django back-end admin section allowing full CRUD functionality. Built using Python and Django, the images are stored on AWS. This project is live on Heroku.",
-            link: "https://grandcentral-e0ebd1401088.herokuapp.com/",
+            description: "This pub website allows users to view upcoming events and the food and drink menus. Once logged in, customers can create an order, selecting from various side options as they go.  The site is designed for easy-customisation by the client.  There's a Django back-end admin section allowing full CRUD functionality. Built using Python and Django, the images are stored on AWS. The code is viewable on GitHub.",
+            // link: "https://grandcentral-e0ebd1401088.herokuapp.com/",
             githublink: "https://github.com/MegKM/grand-central"
 
         },
