@@ -13,7 +13,7 @@ function Home(){
                             <hr></hr>
                             <p> I'm a junior software developer with a passion for back-end programming.  </p>
                             <p>
-                            I've recently completed a Software Engineering Immersive course with General Assembly which covered: </p>
+                            I've recently completed a Software Engineering Immersive course with General Assembly which covered: 
                             <ul>
                                 <li> JavaScript and the MERN stack</li>    
                                 <li> Python and Django</li>
@@ -23,6 +23,7 @@ function Home(){
                                 <li>Web hosting platforms like Heroku and Netlify</li>
                                 <li>Version control sites like Git.</li>
                             </ul> 
+                            </p>
                             <p>
                             Prior to General Assembly, the majority of my studies have been self-directed. I have studied programming passionately in my free time completing various online courses through a number of platforms. This includes:
                             <ul>
@@ -32,6 +33,17 @@ function Home(){
                                 <li>and a number of Unity game design courses; the scene in the video below was built using C# and the Unity Game Engine.</li>
                             </ul>
                             </p>
+
+                            <p>I have <a href="https://www.monashfodmap.com/online-training/fodmap-dietitians-directory/" target="_blank">commercial experience</a> working with the following technologies:
+                            <ul>
+                                <li>Python/Django</li>
+                                <li>Wagtail</li>
+                                <li>Google Maps API</li>
+                                <li>SCSS</li>
+                                <li>HTML/CSS</li>
+                            </ul>
+                            </p>
+
                             <p>
                             I think my strengths lie in my passion for problem-solving, my attention to detail and my belief that every piece of work that has my name against it is a reflection of my character.  I work hard until I'm satisfied with what I've produced and I enjoy discovering and implementing unique methods to achieve my goals.<br />
                             </p>

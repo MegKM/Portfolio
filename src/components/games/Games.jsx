@@ -10,7 +10,7 @@ function GamesPage(){
 
     useEffect(() => {
         getJoke();
-        getQuote();
+        // getQuote();
     }, []);
 
     async function getJoke(){
@@ -22,14 +22,14 @@ function GamesPage(){
         setShowPunchline(false);
     }
 
-    async function getQuote(){
-        let request = await fetch('https://api.quotable.io/quotes/random');
-        let data = await request.json();
+    // async function getQuote(){
+    //     let request = await fetch('https://zenquotes.io/api/quotes');
+    //     let data = await request.json();
 
-        setQuote(data[0].content)
-        setQuoteSayer(data[0].author)
-        console.log(data);
-    }
+    //     setQuote(data[0].q)
+    //     setQuoteSayer(data[0].a)
+    //     console.log(data);
+    // }
 
     function revealPunchline(){
         setShowPunchline(true);
@@ -64,11 +64,11 @@ function GamesPage(){
             </div>
             <hr></hr>
             <div className="joke_quote">
-                <div className="quote">
+                {/* <div className="quote">
                     <h5>Quote of the day</h5>
                     <p>{ quote }</p>
                     <p>-{ quoteSayer }</p>
-                </div>
+                </div> */}
                 <div className="joke">
                     <h5>Joke town</h5>
                     <div id="joke">{ joke }</div>
