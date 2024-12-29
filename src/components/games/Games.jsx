@@ -52,7 +52,9 @@ function GamesPage(){
     return (
         <>
         <div id="games" className="container pt-4">
-            <h2>Games & such</h2>
+            <div className='heading-container'>
+                <h1>Games & such</h1>
+            </div>
             <hr></hr>
             <h4>Welcome</h4>
             <p>This section of the site is me playing around with code and API calls. That's all.</p>

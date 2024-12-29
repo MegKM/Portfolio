@@ -48,14 +48,18 @@ function ProjectsPage(){
     return (
         <>
             <div id="projects" className="container pt-4">
-            <h2>Projects</h2>
+                <div className='heading-container'>
+                <h1>Projects</h1>
+            </div>
                 <hr></hr>
+                <div className='main-content'>
                 <div className="row">
-                    {projects.map((project, index) => (
-                        <div className="col-md-6 col-lg-4 mb-4" key={index}>
-                            <ProjectCard project={project} />
-                        </div>
-                    ))}
+                        {projects.map((project, index) => (
+                            <div className="col-md-6 col-lg-4 mb-4" key={index}>
+                                <ProjectCard project={project} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </>

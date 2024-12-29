@@ -1,7 +1,9 @@
 function Contact(){
     return (
         <div id="contact" className="container pt-4">
-            <h2>Contact</h2>
+            <div className="heading-container">
+                <h1>Contact</h1>
+            </div>
             <hr></hr>
             <div className="row">
                 <div className="col-4">
