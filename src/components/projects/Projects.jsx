@@ -45,20 +45,31 @@ function ProjectsPage(){
         }
     ]
 
+    function scrollCarousel(direction) {
+        const container = document.querySelector(".project-container");
+        const scrollAmount = container.clientWidth; 
+        container.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+    }
+    
+
     return (
         <>
-            <div id="projects" className="container pt-4">
+            <div id="projects">
                 <div className='heading-container'>
-                <h1>Projects</h1>
-            </div>
-                <hr></hr>
-                <div className='main-content'>
-                <div className="row">
-                        {projects.map((project, index) => (
-                            <div className="col-md-6 col-lg-4 mb-4" key={index}>
-                                <ProjectCard project={project} />
-                            </div>
-                        ))}
+                    <h1>Projects</h1>
+                </div>
+                <div className="projects-container">
+                <hr />
+                    <div className="project-carousel">
+                        <button className="carousel-arrow left-arrow" onClick={() => scrollCarousel(-1)}>&lt;</button>
+                        <div className="project-container">
+                            {projects.map((project, index) => (
+                                <div className="project-card" key={index}>
+                                    <ProjectCard project={project} />
+                                </div>
+                            ))}
+                        </div>
+                        <button className="carousel-arrow right-arrow" onClick={() => scrollCarousel(1)}>&gt;</button>
                     </div>
                 </div>
             </div>

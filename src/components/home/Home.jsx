@@ -52,7 +52,7 @@ function Home(){
                         <li>Python/Django</li>
                         <li>Wagtail CMS</li>
                         <li>Google Maps API</li>
-                        <li>HTML/SCSS</li>
+                        <li>HTML/SCSS.</li>
                     </ul>
                 </p>
                 <p>I also spent many years at the Victorian Auditor-General's Office creating HTML versions of their audit reports.  This <a href="https://www.audit.vic.gov.au/report/annual-plan-2019-20" target="_blank">Annual Plan</a> is one of the many reports I adapted for online publication, ensuring accessibility, responsiveness, and user-friendly navigation for a wide audience.
