@@ -14,7 +14,7 @@ function GameCard({game}){
                     <p>{game.description}</p>
                 <Link to={`/games/${game.name}`}>
                     <p className='game-links'>{game.link}</p>
-                    </Link> 
+                </Link> 
                 </div>
                 ) : (
                     <div className="card-body">

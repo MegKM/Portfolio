@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import GameCard from '../gameCard/GameCard'
+import './games.css'
 
 function GamesPage(){
     const [ quote, setQuote ] = useState("");
@@ -49,6 +50,7 @@ function GamesPage(){
             link: "Click here to take a 10-question quiz"
         }
     ]
+
     return (
         <>
         <div id="games" className="container pt-4">
@@ -56,16 +58,16 @@ function GamesPage(){
                 <h1>Games & such</h1>
             </div>
             <hr></hr>
-            <h4>Welcome</h4>
-            <p>This section of the site is me playing around with code and API calls. That's all.</p>
+            <div id="games-welcome">
+                <h4>Welcome</h4>
+                <p>This section of the site is me playing around with code and API calls. That's all.</p>
+            </div>
             <hr></hr>
-
-            <h5>Games</h5>
             <div className="card-group">
                 {games.map((game, index) => <GameCard game={game} key={index} />)}
             </div>
             <hr></hr>
-            <div className="joke_quote">
+            <div className="joke-quote">
                 {/* <div className="quote">
                     <h5>Quote of the day</h5>
                     <p>{ quote }</p>
