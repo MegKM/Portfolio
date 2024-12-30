@@ -1,6 +1,7 @@
 #info-container {
     background-color: rgb(231, 222, 229);
-    margin: 0 50px;
+    margin: 20px 50px;
+    align-items: center;
 }
 
 #button-container {
@@ -10,12 +11,16 @@
 }
 
 #body-container {
-    padding: 50px;
+    padding: 30px;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
     height: 300px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Ensures the content within is vertically arranged */
+    justify-content: center; /* Vertically centers the content */
+    align-items: center; /* Horizontally centers the content */
 }
 
 button {
@@ -51,13 +56,28 @@ button:hover {
     color: black;
 }
 
+
+/* @media screen and (max-width: 1400px){
+    #body-container {
+        padding: 30px;
+    }
+} */
+
+
 @media screen and (max-width: 1200px){
     .button-text {
         font-size: 1rem;
     }
 
     #body-container {
-        height: 350px;
+        height: 310px;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    #body-container {
+        height: 330px;
         padding: 20px;
     }
 }
@@ -78,13 +98,25 @@ button:hover {
     button {
         width: 48%;
         border: none;
+    }
 
+    #video-container {
+        width: 100%; 
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+
+    #video-container .react-player {
+        width: 100% !important; 
+        max-width: 100% !important; 
     }
 }
 
 @media screen and (max-width: 480px) {
     #info-container {
         margin: 0;
+        margin-bottom: 10px;
     }
 
     #body-container {
@@ -104,7 +136,5 @@ button:hover {
     }
 }
 
-#video-container {
-    margin: 50px;
-}
+
 

@@ -74,7 +74,7 @@ function Home(){
 
     return (
         <>
-            <div className="container mt-2 pt-4">
+            <div className="container mt-2 pt-4 mb-2 pt-4">
                 <div className='heading-container'>
                     <h1>Megan Mithen</h1>
                 </div>
