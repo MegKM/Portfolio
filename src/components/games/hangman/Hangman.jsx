@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
-import { random_words } from '../../../hangmanWords.js'
-import { hangman_pictures } from '../../../hangmanPictures.js'
+import { useState, useEffect, useRef } from 'react';
+import { random_words } from '../../../hangmanWords.js';
+import { hangman_pictures } from '../../../hangmanPictures.js';
 import { Link } from 'react-router-dom';
-import './hangman.css'
+import './hangman.css';
+import KeyboardComponent from './Keyboard.jsx';
 
 function Hangman(){
     const randomWord = Array.from(random_words[Math.floor(Math.random() * random_words.length)]);
@@ -63,27 +64,36 @@ function Hangman(){
         }
     }
 
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth <= 768 && inputRef.current) {
-                inputRef.current.focus();
+    const handleKeyPress = (key) => {
+        // Handle the key press here (similar to detectKeyPressed)
+        if (wordToGuess.includes(key) && !onScreenWord.includes(key)) {
+            const updatedWord = wordToGuess.map((letter, index) => 
+                letter === key ? key : onScreenWord[index]
+            );
+            setOnScreenWord(updatedWord);
+
+            if (updatedWord.toString() === wordToGuess.toString()) {
+                setUserMessage("You've won!");
+                setGameInPlay(false);
+            } else {
+                setUserMessage("Correct! Guess another letter.");
             }
-        };
-
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    // useEffect(() => {
-    //     const handleKeydown = (event) => detectKeyPressed(event);
-    //     window.addEventListener("keydown", handleKeydown);
-    //     return () => {
-    //         window.removeEventListener("keydown", handleKeydown);
-    //     };
-    // }, [onScreenWord, wordToGuess, wrongGuessesLetters, gameInPlay]);
+        } else {
+            if (wrongGuessesLetters.includes(key)) {
+                setUserMessage("You've already guessed this letter, try again.");
+            } else {
+                setWrongGuessesLetters(prevWrongGuesses => [
+                    ...prevWrongGuesses,
+                    key.toUpperCase()
+                ]);
+                setUserMessage("Incorrect, try again.");
+                if (wrongGuessesLetters.length + 1 >= 7) {
+                    setUserMessage("Game over!");
+                    setGameInPlay(false);
+                }
+            }
+        }
+    };
 
     function refreshPage(){
         location.reload()
@@ -95,6 +105,7 @@ function Hangman(){
                 <div className='heading-container'>
                     <h1>Hangman</h1>
                 </div>
+                
                 <div id="hangman-container">
                     { wrongGuessesLetters.length < 7 ? (
                     <div className='hangman-picture'><img src={hangman_pictures[wrongGuessesLetters.length]}></img></div>
@@ -104,12 +115,6 @@ function Hangman(){
                     <div id="hangman-text">
                         <h3>{ onScreenWord }</h3>
                         <h4>{ userMessage }</h4>
-                        <input
-                            ref={inputRef}
-                            type="text"
-                            style={{ position: "absolute", opacity: 0, pointerEvents: "none" }} // Invisible
-                            aria-hidden="true" // Make it not accessible for screen readers
-                        />
                         { gameInPlay ? (
                             <div>
                                 <p>Incorrect guesses: { wrongGuessesLetters.join(", ") }</p>
@@ -124,6 +129,7 @@ function Hangman(){
                             </div>) 
                         }
                     </div>
+                    <KeyboardComponent onKeyPress={handleKeyPress}/>
                 </div>
             </div>
         </>
