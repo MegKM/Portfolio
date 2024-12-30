@@ -8,23 +8,24 @@ function Home(){
         {
             title: "About me",
             body: `
-                <p>I'm a junior web developer with a passion for back-end programming.  <br><br>I think my strengths lie in my passion for problem-solving, my attention to detail and my belief that every piece of work that has my name against it is a reflection of my character.  I work hard until I'm satisfied with what I've produced and I enjoy discovering and implementing unique methods to achieve my goals.  <br>I'm based in Melbourne and open to working onsite or remotely. Thanks for visiting my website.  If you'd like to know more about me feel free to reach out for a coffee and a chat.
+                <p>Welcome! <br><br>My name's Megan Mithen and I'm a junior web developer.  <br><br>My strengths lie in my passion for problem-solving, my attention to detail and my commitment to delivering high-quality results.  I work diligently until I'm satisfied with the outcome, and I enjoy discovering and implementing innovative methods to achieve my goals.  <br><br>I'm based in Melbourne and looking for hybrid or remote work. If you'd like to know more about me feel free to reach out for a coffee and a chat. Thanks for visiting my website!
                 </p> 
             `
         },
         {
             title: "Formal training",
             body: `
-                <p>I've recently completed a Software Engineering Immersive course with General Assembly which covered: 
+                <p>I've recently completed a Software Engineering Immersive course with General Assembly which included 500+ hours of hands-on experience with the following: 
                 <ul>
-                    <li> JavaScript and the MERN stack</li>    
-                    <li> Python and Django</li>
-                    <li>CSS and HTML (custom and frameworks like Bootstrap)</li>
-                    <li>Relational and non-relational databases </li>
-                    <li>Cloud-sharing platforms like AWS and Cloudinary</li>
-                    <li>Web hosting platforms like Heroku and Netlify</li>
-                    <li>Version control sites like Git.</li>
+                    <li>JavaScript and the MERN stack</li>    
+                    <li>Python and Django</li>
+                    <li>HTML and CSS (vanilla and utilizing frameworks)</li>
+                    <li>relational and non-relational databases</li>
+                    <li>cloud-sharing platforms</li>
+                    <li>website-hosting platforms</li>
+                    <li>version control.</li>
                 </ul> 
+                Please see my skills section for more details.
                 </p>
             `
         },
@@ -32,11 +33,11 @@ function Home(){
             title: "Personal studies",
             body:
             `
-                <p>The majority of my studies have been self-directed. I have studied programming passionately in my free time completing various online courses through a number of platforms. This includes:
+                <p>The majority of my studies have been self-directed. In my free time, I have completed various online courses through a number of platforms. These include:
                     <ul>
                         <li>CS50 - a computer science course through HarvardX,</li>
-                        <li> C# Fundamentals - Microsoft Learn,</li>
-                        <li>100 days of Code - a Python course through Udemy,</li> 
+                        <li>C# Fundamentals - Microsoft Learn,</li>
+                        <li>100 Days of Code - a Python course through Udemy,</li> 
                         <li>and a number of Unity game design courses; the scene in the video below was built using C# and the Unity Game Engine.</li>
                     </ul>
                 </p>
@@ -49,10 +50,9 @@ function Home(){
                 <p>I have <a href="https://www.monashfodmap.com/online-training/fodmap-dietitians-directory/" target="_blank">commercial experience</a> working with the Monash University FODMAP team using the following technologies:
                     <ul>
                         <li>Python/Django</li>
-                        <li>Wagtail</li>
+                        <li>Wagtail CMS</li>
                         <li>Google Maps API</li>
-                        <li>SCSS</li>
-                        <li>HTML/CSS</li>
+                        <li>HTML/SCSS</li>
                     </ul>
                 </p>
                 <p>I also spent many years at the Victorian Auditor-General's Office creating HTML versions of their audit reports.  This <a href="https://www.audit.vic.gov.au/report/annual-plan-2019-20" target="_blank">Annual Plan</a> is one of the many reports I adapted for online publication, ensuring accessibility, responsiveness, and user-friendly navigation for a wide audience.

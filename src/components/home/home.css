@@ -18,9 +18,9 @@
     height: 300px;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column; /* Ensures the content within is vertically arranged */
-    justify-content: center; /* Vertically centers the content */
-    align-items: center; /* Horizontally centers the content */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
 }
 
 button {
@@ -55,14 +55,6 @@ button:hover {
 .active:hover {
     color: black;
 }
-
-
-/* @media screen and (max-width: 1400px){
-    #body-container {
-        padding: 30px;
-    }
-} */
-
 
 @media screen and (max-width: 1200px){
     .button-text {
