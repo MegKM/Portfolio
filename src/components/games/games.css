@@ -55,6 +55,6 @@
     box-shadow: 0 0 15px 10px rgba(252, 252, 252, 0.2);
 }
 
-button {
+.joke-button {
     min-width: 100px;
 }

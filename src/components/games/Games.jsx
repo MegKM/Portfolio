@@ -76,13 +76,13 @@ function GamesPage(){
                 <div className="joke">
                     <h5>Joke town</h5>
                     <div id="joke">{ joke }</div>
-                    <button className="btn btn-dark mb-2 mt-2"onClick={ revealPunchline }>
+                    <button className="btn btn-dark mb-2 mt-2 joke-button"onClick={ revealPunchline }>
                         <img src="/big_grin.png"></img>
                     </button>
                     {showPunchline && 
                         <div id="punchline"> 
                             <p>{ punchline }</p>
-                            <button className="btn btn-dark" onClick={ getJoke }>Get new joke</button>
+                            <button className="btn btn-dark joke-button" onClick={ getJoke }>Get new joke</button>
                         </div>}
                 </div>
 
