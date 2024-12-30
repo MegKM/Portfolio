@@ -24,7 +24,14 @@ function Hangman(){
     }, [])
 
     const detectKeyPressed = (event) => {
-        const keyPressed = event.key;
+        let keyPressed = event.key;
+        console.log(keyPressed)
+        if (keyPressed === "UNIDENTIFIED"){
+            // keyPressed = event.keyCode;
+            keyPressed = String.fromCharCode(event.keyCode)
+            console.log("in function:",  keyPressed)
+        }
+
         if (wordToGuess.includes(keyPressed) && !onScreenWord.includes(keyPressed)){
             dashedWord[wordToGuess.indexOf(keyPressed)] = keyPressed
             const updatedWord = wordToGuess.map((letter) => {
@@ -69,6 +76,14 @@ function Hangman(){
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    // useEffect(() => {
+    //     const handleKeydown = (event) => detectKeyPressed(event);
+    //     window.addEventListener("keydown", handleKeydown);
+    //     return () => {
+    //         window.removeEventListener("keydown", handleKeydown);
+    //     };
+    // }, [onScreenWord, wordToGuess, wrongGuessesLetters, gameInPlay]);
 
     function refreshPage(){
         location.reload()
