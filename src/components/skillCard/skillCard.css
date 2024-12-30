@@ -1,4 +1,4 @@
-img {
+.skill-logo {
     height: 150px;
     margin: 30px;
     background: 
@@ -13,19 +13,19 @@ img {
 
 
 @media screen and (max-width: 1200px){
-    img {
+    .skill-logo {
         height: 125px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    img {
+    .skill-logo {
         height: 100px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    img {
+    .skill-logo {
         height: 75px;
         margin: 15px;
     }
