@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { random_words } from '../../../hangmanWords.js'
 import { hangman_pictures } from '../../../hangmanPictures.js'
 import { Link } from 'react-router-dom';
+import './hangman.css'
 
 function Hangman(){
     const randomWord = Array.from(random_words[Math.floor(Math.random() * random_words.length)]);
@@ -16,6 +17,7 @@ function Hangman(){
     const [wrongGuessesLetters, setWrongGuessesLetters] = useState([])
     const [userMessage, setUserMessage] = useState("Choose a letter")
     const [gameInPlay, setGameInPlay] = useState(true)
+    const inputRef = useRef(null);
 
     useEffect(() => {
         document.addEventListener('keydown', detectKeyPressed, true)
@@ -54,6 +56,20 @@ function Hangman(){
         }
     }
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 768 && inputRef.current) {
+                inputRef.current.focus();
+            }
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     function refreshPage(){
         location.reload()
     }
@@ -61,25 +77,39 @@ function Hangman(){
     return(
         <>
             <div className="container mt-4">
-                <h1>Hangman</h1>
-                { wrongGuessesLetters.length < 7 ? (
-                <div className='hangman-picture'><img src={hangman_pictures[wrongGuessesLetters.length]}></img></div>
-                ) : (
-                    <div className='hangman-picture'><img src={hangman_pictures[7]}></img> </div>)
-                }
-                <h3>{ onScreenWord }</h3>
-                <h4>{ userMessage }</h4>
-                { gameInPlay ? (
-                    <div>
-                        <p>Incorrect guesses: { wrongGuessesLetters }</p>
-                        <p>Guesses remaining: { 7 - wrongGuessesLetters.length }</p>
-                    </div> ) : ( 
-                    <div>
-                        <p>The word was: {wordToGuess}</p>
-                        <button className='btn btn-dark m-4' onClick={ refreshPage }>Play again</button>
-                        <Link to={`/games`}><button className='btn btn-dark'>Return to games</button></Link>
-                    </div>) 
-                }
+                <div className='heading-container'>
+                    <h1>Hangman</h1>
+                </div>
+                <div id="hangman-container">
+                    { wrongGuessesLetters.length < 7 ? (
+                    <div className='hangman-picture'><img src={hangman_pictures[wrongGuessesLetters.length]}></img></div>
+                    ) : (
+                        <div className='hangman-picture'><img src={hangman_pictures[7]}></img> </div>)
+                    }
+                    <div id="hangman-text">
+                        <h3>{ onScreenWord }</h3>
+                        <h4>{ userMessage }</h4>
+                        <input
+                            ref={inputRef}
+                            type="text"
+                            style={{ position: "absolute", opacity: 0, pointerEvents: "none" }} // Invisible
+                            aria-hidden="true" // Make it not accessible for screen readers
+                        />
+                        { gameInPlay ? (
+                            <div>
+                                <p>Incorrect guesses: { wrongGuessesLetters.join(", ") }</p>
+                                <p>Guesses remaining: { 7 - wrongGuessesLetters.length }</p>
+                            </div> ) : ( 
+                            <div>
+                                <p>The word was: {wordToGuess}</p>
+                                <div  className="hangman-button-container">
+                                    <button className='hangman-button btn btn-dark m-4' onClick={ refreshPage }>Play again</button>
+                                    <Link to={`/games`}><button className='hangman-button btn btn-dark'>Return to games</button></Link>
+                                </div>
+                            </div>) 
+                        }
+                    </div>
+                </div>
             </div>
         </>
     )

@@ -1,0 +1,41 @@
+
+.hangman-picture {
+    background-color: white;
+    width: 30vmin;
+    display: flex;
+    justify-content: center;
+}
+
+#hangman-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#hangman-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: 
+        radial-gradient(ellipse, 
+        rgba(252, 252, 252, 1) 40%, 
+        rgba(252, 252, 252, 0.5) 70%,
+        rgba(252, 252, 252, 0) 100%);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 10px rgba(252, 252, 252, 0.2);
+    min-width: 400px;
+}
+
+.hangman-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hangman-button {
+    width: 100px;
+}
