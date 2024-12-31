@@ -25,6 +25,10 @@
     }  
 }
 
+.game-card {
+    background-color: rgb(231, 222, 229);
+}
+
 .game-links {
     color: black;
     text-decoration: none;

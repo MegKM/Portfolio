@@ -1,3 +1,5 @@
+import './contact.css'
+
 function Contact(){
     return (
         <div id="contact" className="container pt-4">
@@ -5,11 +7,11 @@ function Contact(){
                 <h1>Contact</h1>
             </div>
             <hr></hr>
-            <div className="row">
-                <div className="col-4">
-                    <img src="/megan.png"  style={{width: '300px', borderRadius: '25%'}}></img>
+            <div id="contact-container">
+                <div>
+                    <img src="/megan.png" id="profile-picture"></img>
                 </div>
-                <div className="col">
+                <div id="info-text">
                     <p>Check out my projects on GitHub<br/ >
                     <a href="https://github.com/MegKM" target="_blank">GitHub</a><br/ ></p>
 
