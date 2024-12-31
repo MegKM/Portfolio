@@ -1,4 +1,5 @@
 import SkillCard from '../skillCard/SkillCard'
+import './skills.css'
 
 // Import all logos using Vite's glob import
 const logos = import.meta.glob('../../assets/logos/*.svg', { eager: true });

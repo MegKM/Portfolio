@@ -21,17 +21,17 @@
     }
 
    .project-carousel {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    gap: 20px; 
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 20px; 
     }
 
     .carousel-arrow {
-        display: none;
+        display: none !important;
     }
 
-    .project-container {
+    .project-card-container {
         display: flex;
         flex-direction: column;
         gap: 20px; 
@@ -45,6 +45,8 @@
     }
     
 }
+
+
 
 .card-img-top {
     height: 175px;
@@ -60,7 +62,13 @@
     box-sizing: border-box;
 }
 
-.project-container {
+@media screen and (max-width: 480px) {
+    .project-carousel {
+        padding: 0 5px;
+    }
+}
+
+.project-card-container {
     display: flex;
     justify-content: flex-start;
     overflow-x: auto;
@@ -70,7 +78,7 @@
     scrollbar-width: none;
 }
 
-.project-container::-webkit-scrollbar {
+.project-card-container::-webkit-scrollbar {
     display: none; 
 }
 

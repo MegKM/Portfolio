@@ -62,7 +62,7 @@ function ProjectsPage(){
                 <hr />
                     <div className="project-carousel">
                         <button className="carousel-arrow left-arrow" onClick={() => scrollCarousel(-1)}>&lt;</button>
-                        <div className="project-container">
+                        <div className="project-card-container">
                             {projects.map((project, index) => (
                                 <div className="project-card" key={index}>
                                     <ProjectCard project={project} />
