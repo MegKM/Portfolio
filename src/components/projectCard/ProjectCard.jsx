@@ -5,7 +5,7 @@ function ProjectCard({project}){
                 <img src={project.image} className="card-img-top" alt="..."/>
                 <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{project.name}</h5>
-                    <p className="card-text">{project.description}</p>
+                    <div dangerouslySetInnerHTML={{__html: project.description}} ></div>
                     <div className="mt-auto">
                         {project.link && (
                             <a href={project.link} target="_blank" className="btn btn-light p-2 m-2 ">View website</a>

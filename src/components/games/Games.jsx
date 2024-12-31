@@ -40,7 +40,7 @@ function GamesPage(){
         {
             name: "Hangman",
             active: true,
-            description: "The traditional hangman game.  Use your keyboard to select letters and try to guess the correct word before it's too late!",
+            description: "The traditional hangman game.  Use the on-screen keyboard to select letters and try to guess the correct word before it's too late!",
             link: "Click here to play the game.",
         },
         {

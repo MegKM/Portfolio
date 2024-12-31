@@ -1,0 +1,19 @@
+/* .current {
+    background-color: rgb(231, 222, 229);
+    color: #212529;
+}
+
+.current:focus {
+    color: #212529;
+} */
+
+.current {
+    border-bottom: 3px solid rgb(231, 222, 229);
+    padding-bottom: 5px;
+    /* background-color: rgb(231, 222, 229); */
+    color: rgb(231, 222, 229);
+}
+
+.current:focus {
+    color: rgb(231, 222, 229);
+}

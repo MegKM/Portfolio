@@ -16,6 +16,7 @@
     display: flex;
     justify-content: center;
     margin: 0 25px;
+    gap: 25px;
 }
 
 @media screen and (max-width: 768px) {
@@ -27,6 +28,8 @@
 
 .game-card {
     background-color: rgb(231, 222, 229);
+    border: 1px solid #212529 !important;
+    border-radius: 5px !important;
 }
 
 .game-links {

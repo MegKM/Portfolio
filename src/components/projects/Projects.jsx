@@ -42,11 +42,17 @@ function ProjectsPage(){
             description: "This calculator accurately calculates an employee's pay who's covered by the Fast Food Industry Award. The calculator factors in job and award type.  This was built to replace an already existing calculator that didn't allow for minutes to be entered and didn't calculate the crew coach or IFA allowance. Built using JavaScript and React, the project is live on Netlify.",
             link: "https://backpaycalculator.netlify.app/",
             githublink: "https://github.com/MegKM/backpay_calculator"
+        },
+        {
+            name: "Portfolio website",
+            image: "/PortfolioWebsite.png",
+            description: `This website was built with JavaScript and React and employs some Bootstrap styling.  Credit for the virtual keyboard (in the Hangman game) lies with <a href='https://virtual-keyboard.js.org/' target="_blank"> these fine folks</a>.  The site is interactive, dynamic and responsive across all viewports. The Games page utilises API calls for the jokes and the quiz. I hope you've enjoyed your visit :)`,
+            githublink: "https://github.com/MegKM/Portfolio"
         }
     ]
 
     function scrollCarousel(direction) {
-        const container = document.querySelector(".project-container");
+        const container = document.querySelector(".project-card-container");
         const scrollAmount = container.clientWidth; 
         container.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
     }
