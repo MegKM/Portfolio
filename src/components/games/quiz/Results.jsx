@@ -29,7 +29,7 @@ function Results(){
             </div>
             <hr></hr>
             <button className='btn btn-dark m-2' onClick={restartQuiz}>Play again</button>
-            <Link to={`/games`}><button className='btn btn-dark'>Return to games</button></Link>
+            <Link to={`/games`}><button className='btn btn-dark m-2'>Return to games</button></Link>
         </div>
     )
 }

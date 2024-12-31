@@ -53,4 +53,6 @@
 
 .joke-button {
     min-width: 100px;
+    height: auto;
+    padding: 5px;
 }

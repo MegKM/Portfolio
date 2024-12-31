@@ -85,7 +85,6 @@ function GamesPage(){
                             <button className="btn btn-dark joke-button" onClick={ getJoke }>Get new joke</button>
                         </div>}
                 </div>
-
             </div>
         </div>
         </>
