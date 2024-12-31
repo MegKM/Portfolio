@@ -11,7 +11,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 #hangman-text {
@@ -38,4 +37,5 @@
 
 .hangman-button {
     width: 100px;
+    height: 60px;
 }

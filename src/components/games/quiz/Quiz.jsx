@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import './quiz.css'
 
 function Quiz(){
 
@@ -7,12 +8,24 @@ function Quiz(){
     const [difficulty, setDifficulty] = useState("easy");
     const navigate = useNavigate();
 
+    function decodeHTML(html) {
+        const doc = new DOMParser().parseFromString(html, "text/html");
+        return doc.documentElement.textContent;
+    }
+
     async function sendApiRequest(){
         let response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
         let data = await response.json();
         data.results.forEach(element => {
-            element["players_choice"] =""
+            element["players_choice"] = ""
+            element["question"] = decodeHTML(element["question"])
+            element["corrent_answer"] = decodeHTML(element["correct_answer"])
+            element["incorrect_answers"] = element["incorrect_answers"].map( answer => {
+                const decodedAnswer = decodeHTML(answer)
+                return decodedAnswer;                
             })
+            
+        })
         redirect(data);
     }
 
@@ -29,10 +42,12 @@ function Quiz(){
     }
 
     return(
-        <div className="container mt-2 pt-4">
-            <h1>Quiz</h1>
-            <div className="mt-5">
-                <p>Select category</p>
+        <div className="container mt-2 pt-4" id="quiz-conatiner">
+            <div className='heading-container'>
+                <h1>Quiz</h1>
+            </div>
+            <div id="quiz-options-container" align="center">
+                <p className='quiz-text shaded'>Select category</p>
                 <select className="form-select" onChange={handleCategoryChange} id="category">
                     <option value="9">General Knowledge</option>
                     <option value="27">Animals</option>
@@ -44,9 +59,7 @@ function Quiz(){
                     <option value="12">Music</option>
                     <option value="17">Science & Nature</option>
                 </select>
-            </div>
-            <div className="mt-5">
-                <p>Select difficulty</p>
+                <p className='quiz-text shaded'>Select difficulty</p>
                 <select className="form-select" onChange={handleDifficultyChange} id="difficulty">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
@@ -54,7 +67,7 @@ function Quiz(){
                 </select>
             </div>
             <div className="mt-3">
-                <button className="btn btn-dark" onClick={sendApiRequest}>Get questions</button>
+                <button className="quiz-button btn btn-dark" onClick={sendApiRequest}>Get questions</button>
             </div>
         </div>
     )

@@ -20,52 +20,44 @@ function Hangman(){
     const [gameInPlay, setGameInPlay] = useState(true)
     const inputRef = useRef(null);
 
-    useEffect(() => {
-        document.addEventListener('keydown', detectKeyPressed, true)
-    }, [])
+    // useEffect(() => {
+    //     document.addEventListener('keydown', detectKeyPressed, true)
+    // }, [])
 
-    const detectKeyPressed = (event) => {
-        let keyPressed = event.key;
-        console.log(keyPressed)
-        if (keyPressed === "UNIDENTIFIED"){
-            // keyPressed = event.keyCode;
-            keyPressed = String.fromCharCode(event.keyCode)
-            console.log("in function:",  keyPressed)
-        }
-
-        if (wordToGuess.includes(keyPressed) && !onScreenWord.includes(keyPressed)){
-            dashedWord[wordToGuess.indexOf(keyPressed)] = keyPressed
-            const updatedWord = wordToGuess.map((letter) => {
-                return letter === keyPressed ? keyPressed : onScreenWord[wordToGuess.indexOf(letter)];
-            })     
-            setOnScreenWord(updatedWord)
-            if(wordToGuess.toString() === updatedWord.toString()){
-                setUserMessage("You've won!")
-                setGameInPlay(false);
-            } else {
-                setUserMessage("Correct! Guess another letter.")       
-            }
-        } else {
-            if(wrongGuessesLetters.includes(keyPressed)){
-                setUserMessage("You've already guess this letter, try again.")
-            } else {
-                wrongGuessesLetters.push(keyPressed)
-                let newArray = wrongGuessesLetters.map((letter) => {
-                    let uppercaseLetter = letter.toUpperCase()
-                    return uppercaseLetter 
-                })
-                setWrongGuessesLetters(newArray)
-                setUserMessage("Incorrect, try again.")
-                if(wrongGuessesLetters.length >= 7){
-                    setUserMessage("Game over!")
-                    setGameInPlay(false)
-                }
-            }
-        }
-    }
+    // const detectKeyPressed = (event) => {
+    //     let keyPressed = event.key;
+    //     if (wordToGuess.includes(keyPressed) && !onScreenWord.includes(keyPressed)){
+    //         dashedWord[wordToGuess.indexOf(keyPressed)] = keyPressed
+    //         const updatedWord = wordToGuess.map((letter) => {
+    //             return letter === keyPressed ? keyPressed : onScreenWord[wordToGuess.indexOf(letter)];
+    //         })     
+    //         setOnScreenWord(updatedWord)
+    //         if(wordToGuess.toString() === updatedWord.toString()){
+    //             setUserMessage("You've won!")
+    //             setGameInPlay(false);
+    //         } else {
+    //             setUserMessage("Correct! Guess another letter.")       
+    //         }
+    //     } else {
+    //         if(wrongGuessesLetters.includes(keyPressed)){
+    //             setUserMessage("You've already guess this letter, try again.")
+    //         } else {
+    //             wrongGuessesLetters.push(keyPressed)
+    //             let newArray = wrongGuessesLetters.map((letter) => {
+    //                 let uppercaseLetter = letter.toUpperCase()
+    //                 return uppercaseLetter 
+    //             })
+    //             setWrongGuessesLetters(newArray)
+    //             setUserMessage("Incorrect, try again.")
+    //             if(wrongGuessesLetters.length >= 7){
+    //                 setUserMessage("Game over!")
+    //                 setGameInPlay(false)
+    //             }
+    //         }
+    //     }
+    // }
 
     const handleKeyPress = (key) => {
-        // Handle the key press here (similar to detectKeyPressed)
         if (wordToGuess.includes(key) && !onScreenWord.includes(key)) {
             const updatedWord = wordToGuess.map((letter, index) => 
                 letter === key ? key : onScreenWord[index]

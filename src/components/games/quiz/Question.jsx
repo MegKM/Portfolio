@@ -9,6 +9,7 @@ function Question(){
 
     const [ questionNumber, setQuestionNumber ] = useState(0)
     const [ question, setQuestion ] = useState(state.results[questionNumber])
+    console.log(question)
     const answers = [question.correct_answer, question.incorrect_answers[0], question.incorrect_answers[1],question.incorrect_answers[2]]
     const shuffledAnswers = shuffle(answers)
 
@@ -35,28 +36,18 @@ function Question(){
         if(questionNumber == 9){
             navigate("/games/quiz/results", {state: {questions: state.results, results: results}});
         }
-        else{
+        else {
             setQuestionNumber(prevQuestionNumber => prevQuestionNumber +1);
         }
 
     }
-
-    const finalQuestion = question.question.replace(/&quot;|&rsquo;|&#039;|&#039;|&ldquo;|&rdquo;/g, match => {
-        switch (match) {
-            case "&quot;":
-            case "&ldquo;":
-            case "&rdquo;":
-                return '"';
-            case "&rsquo;":
-            case "&#039;":
-                return "'";
-        }
-    });
     
     return(
         <div className="container mt-2 pt-4">
-            <h1>Question {questionNumber + 1}</h1>
-            <p>{finalQuestion}</p>
+            <div className="heading-container">
+                <h1>Question {questionNumber + 1}</h1>
+            </div>
+            <p className='quiz-text shaded'>{question["question"]}</p>
             <button className="btn btn-dark m-2" onClick={checkAnswer} value={shuffledAnswers[0]}>{shuffledAnswers[0]}</button>
             <button className="btn btn-dark m-2" onClick={checkAnswer} value={shuffledAnswers[1]}>{shuffledAnswers[1]}</button>
             <button className="btn btn-dark m-2" onClick={checkAnswer} value={shuffledAnswers[2]}>{shuffledAnswers[2]}</button>

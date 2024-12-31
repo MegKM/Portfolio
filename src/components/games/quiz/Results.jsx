@@ -19,9 +19,11 @@ function Results(){
     }
     
     return (
-        <div className="container pt-4">
-            <h1>Results</h1>
-            <h2>{total_score}/10</h2>
+        <div className="container pt-4 quiz-results-page">
+            <div className='heading-container'>
+                <h1>Results</h1>
+            </div>
+            <h2 className="quiz-result-text">{total_score}/10</h2>
             <div>
                 {questions.map((question, index) => <ResultsCard question={question} key={index} />)}
             </div>
