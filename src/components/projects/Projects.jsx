@@ -46,7 +46,7 @@ function ProjectsPage(){
         {
             name: "Portfolio website",
             image: "/PortfolioWebsite.png",
-            description: `This website was built with JavaScript and React and employs some Bootstrap styling.  Credit for the virtual keyboard (in the Hangman game) lies with <a href='https://virtual-keyboard.js.org/' target="_blank"> these fine folks</a>.  The site is interactive, dynamic and responsive across all viewports. The Games page utilises API calls for the jokes and the quiz. I hope you've enjoyed your visit :)`,
+            description: `This website was built with JavaScript and React and employs some Bootstrap styling.  Credit for the virtual keyboard (in the Hangman game) lies with <a href='https://virtual-keyboard.js.org/' target="_blank"> these fine folks</a>.  The site is interactive, dynamic and responsive across all viewports. The Games page utilises API calls for the jokes and the quiz.`,
             githublink: "https://github.com/MegKM/Portfolio"
         }
     ]
